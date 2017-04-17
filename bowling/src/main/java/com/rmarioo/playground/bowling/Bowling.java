@@ -6,7 +6,6 @@ public class Bowling
 
   public void roll(int pins)
   {
-
     this.pins +=pins;
   }
 
@@ -14,4 +13,5 @@ public class Bowling
   {
     return pins;
   }
+
 }
