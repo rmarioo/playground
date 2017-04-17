@@ -18,9 +18,24 @@ public class Bowling
     int sum = rolls.stream().mapToInt(i -> i).sum();
 
     int allSparesBonus =  IntStream.range(0,rolls.size())
-             .map(i -> (i < 19 && rolls.get(i) + rolls.get(i+1) == 10) ? rolls.get(i+2) : 0)
+             .map(i -> spareScore(i))
              .sum();
     return sum + allSparesBonus;
+  }
+
+  private int spareScore(int i)
+  {
+    return isSpare(i) ? spareBonus(i) : 0;
+  }
+
+  private Integer spareBonus(int index)
+  {
+    return rolls.get(index+2);
+  }
+
+  private boolean isSpare(int i)
+  {
+    return i < 19 && rolls.get(i) + rolls.get(i+1) == 10;
   }
 
 }
