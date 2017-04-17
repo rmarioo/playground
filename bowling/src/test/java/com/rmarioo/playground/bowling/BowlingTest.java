@@ -12,7 +12,7 @@ public class BowlingTest
   @Test
   public void allZeroRolls() throws Exception
   {
-    rollMany(0, 20);
+    rollManyZeros(20);
     assertThat(bowling.score(),is(0));
   }
 
@@ -20,7 +20,7 @@ public class BowlingTest
   public void aNotZeroRoll() throws Exception
   {
     bowling.roll(2);
-    rollMany(0, 19);
+    rollManyZeros(19);
     assertThat(bowling.score(),is(2));
   }
 
@@ -29,7 +29,7 @@ public class BowlingTest
   {
     bowling.roll(2);
     bowling.roll(3);
-    rollMany(0, 18);
+    rollManyZeros(18);
     assertThat(bowling.score(),is(5));
   }
 
@@ -41,7 +41,7 @@ public class BowlingTest
     bowling.roll(3);
     spare();
     bowling.roll(1);
-    rollMany(0, 17);
+    rollManyZeros(17);
     assertThat(bowling.score(),is(2+3+ 10+1+1));
 
   }
@@ -54,7 +54,7 @@ public class BowlingTest
     strike();
     bowling.roll(2);
     bowling.roll(3);
-    rollMany(0,16);
+    rollManyZeros(16);
     assertThat(bowling.score(),is( 7+1+ 10+2+3+2+3));
 
   }
@@ -70,11 +70,11 @@ public class BowlingTest
     bowling.roll(8);
   }
 
-  private void rollMany(int score, int howMany)
+  private void rollManyZeros(int howMany)
   {
     for (int i = 0; i < howMany; i++)
     {
-      bowling.roll(score);
+      bowling.roll(0);
     }
   }
 }

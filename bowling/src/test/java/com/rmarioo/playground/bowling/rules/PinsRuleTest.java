@@ -1,22 +1,21 @@
 package com.rmarioo.playground.bowling.rules;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import static java.util.Collections.nCopies;
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class PinsRuleTest
 {
   @Test
   public void score() throws Exception
   {
-    List<Integer> rolls = new ArrayList<>(nCopies(20, 3));
+    List<Integer> rolls = Arrays.asList(3,2,1,8);
 
-    Assert.assertThat(new PinsRule(rolls).score(0),is(3));
+    assertThat(new PinsRule(rolls).score(0),is(3));
   }
 
 
