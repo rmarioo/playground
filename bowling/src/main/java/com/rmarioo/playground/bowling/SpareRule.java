@@ -17,11 +17,6 @@ public class SpareRule implements BowlingRule
     return isSpare(i) ? spareBonus(i) : 0;
   }
 
-  private int spareScore(int i)
-  {
-    return isSpare(i) ? spareBonus(i) : 0;
-  }
-
   private Integer spareBonus(int index)
   {
     return rolls.get(index+2);
