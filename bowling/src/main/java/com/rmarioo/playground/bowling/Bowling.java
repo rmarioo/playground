@@ -14,7 +14,14 @@ public class Bowling
 
   public int score()
   {
-    return rolls.stream().mapToInt(i->i).sum();
+    int sum = rolls.stream().mapToInt(i -> i).sum();
+
+    int spareBonus = 0;
+    if ( rolls.get(0) + rolls.get(1) == 10)
+    {
+      spareBonus = rolls.get(2);
+    }
+    return sum + spareBonus;
   }
 
 }

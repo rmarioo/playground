@@ -1,6 +1,5 @@
 package com.rmarioo.playground.bowling;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -35,7 +34,6 @@ public class BowlingTest
     assertThat(bowling.score(),is(5));
   }
 
-  @Ignore
   @Test
   public void aSpareAtTheBeginningOfGame() throws Exception
   {
