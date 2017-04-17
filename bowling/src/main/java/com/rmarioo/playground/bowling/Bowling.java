@@ -2,6 +2,7 @@ package com.rmarioo.playground.bowling;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Bowling
 {
@@ -16,12 +17,10 @@ public class Bowling
   {
     int sum = rolls.stream().mapToInt(i -> i).sum();
 
-    int spareBonus = 0;
-    if ( rolls.get(0) + rolls.get(1) == 10)
-    {
-      spareBonus = rolls.get(2);
-    }
-    return sum + spareBonus;
+    int allSparesBonus =  IntStream.range(0,rolls.size())
+             .map(i -> (i < 19 && rolls.get(i) + rolls.get(i+1) == 10) ? rolls.get(i+2) : 0)
+             .sum();
+    return sum + allSparesBonus;
   }
 
 }
