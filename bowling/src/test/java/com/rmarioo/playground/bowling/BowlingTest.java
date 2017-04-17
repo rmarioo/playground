@@ -44,6 +44,22 @@ public class BowlingTest
 
   }
 
+  @Test
+  public void aStrikeAtBeginningOfGame() throws Exception
+  {
+    strike();
+    bowling.roll(7);
+    bowling.roll(1);
+    rollMany(0,16);
+    assertThat(bowling.score(),is(10+ 7+1+ 7+1));
+
+  }
+
+  private void strike()
+  {
+    bowling.roll(10);
+  }
+
   private void spare()
   {
     bowling.roll(2);

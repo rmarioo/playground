@@ -4,11 +4,11 @@ import java.util.List;
 
 public class StrikeRule implements BowlingRule
 {
-  private final List<Integer> pins;
+  private final List<Integer> rolls;
 
-  public StrikeRule(List<Integer> pins)
+  public StrikeRule(List<Integer> rolls)
   {
-    this.pins = pins;
+    this.rolls = rolls;
   }
 
   @Override
@@ -19,11 +19,11 @@ public class StrikeRule implements BowlingRule
 
   private int strikeBonus(int i)
   {
-    return pins.get(i+1) + pins.get(i+2);
+    return rolls.get(i+1) + rolls.get(i+2);
   }
 
   private boolean isStrike(int i)
   {
-    return i < 19 && pins.get(i) == 10;
+    return i < rolls.size()-1 && rolls.get(i) == 10;
   }
 }

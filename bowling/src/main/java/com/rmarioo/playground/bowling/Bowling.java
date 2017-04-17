@@ -14,7 +14,8 @@ public class Bowling
   public Bowling()
   {
     rule = new CompositeRule(asList(new PinsRule(rolls),
-                                    new SpareRule(rolls)));
+                                    new SpareRule(rolls),
+                                    new StrikeRule(rolls)));
   }
 
   public void roll(int pins)

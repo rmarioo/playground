@@ -4,7 +4,6 @@ import java.util.List;
 
 public class SpareRule implements BowlingRule
 {
-
   private final List<Integer> rolls;
 
   public SpareRule(List<Integer> rolls)
@@ -24,6 +23,6 @@ public class SpareRule implements BowlingRule
 
   private boolean isSpare(int i)
   {
-    return i < 19 && rolls.get(i) + rolls.get(i+1) == 10;
+    return i < rolls.size()-1 && rolls.get(i) + rolls.get(i+1) == 10;
   }
 }

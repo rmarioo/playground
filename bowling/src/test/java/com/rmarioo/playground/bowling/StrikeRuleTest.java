@@ -1,12 +1,12 @@
 package com.rmarioo.playground.bowling;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class StrikeRuleTest
 {
@@ -21,7 +21,7 @@ public class StrikeRuleTest
 
     BowlingRule strikeRule = new StrikeRule(pins);
 
-    Assert.assertThat(strikeRule.score(0),is(2+3));
+    assertThat(strikeRule.score(0),is(2+3));
 
   }
 
@@ -35,7 +35,7 @@ public class StrikeRuleTest
 
     BowlingRule strikeRule = new StrikeRule(pins);
 
-    Assert.assertThat(strikeRule.score(0),is(0));
+    assertThat(strikeRule.score(0),is(0));
 
   }
 }
