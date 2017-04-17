@@ -18,7 +18,7 @@ public class BowlingTest
   }
 
   @Test
-  public void notZeroRoll() throws Exception
+  public void aNotZeroRoll() throws Exception
   {
     bowling.roll(2);
     rollMany(0, 19);
