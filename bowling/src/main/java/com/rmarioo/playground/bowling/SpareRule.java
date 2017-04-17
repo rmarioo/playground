@@ -2,7 +2,7 @@ package com.rmarioo.playground.bowling;
 
 import java.util.List;
 
-class SpareRule
+public class SpareRule implements BowlingRule
 {
 
   private final List<Integer> rolls;
