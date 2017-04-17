@@ -7,7 +7,6 @@ import static org.junit.Assert.assertThat;
 
 public class BowlingTest
 {
-
   private final Bowling bowling = new Bowling();
 
   @Test
@@ -34,24 +33,29 @@ public class BowlingTest
     assertThat(bowling.score(),is(5));
   }
 
+
   @Test
-  public void aSpareAtTheBeginningOfGame() throws Exception
+  public void aSpare() throws Exception
   {
-    spare();
+    bowling.roll(2);
     bowling.roll(3);
+    spare();
+    bowling.roll(1);
     rollMany(0, 17);
-    assertThat(bowling.score(),is(2+8+ 3+3));
+    assertThat(bowling.score(),is(2+3+ 10+1+1));
 
   }
 
   @Test
-  public void aStrikeAtBeginningOfGame() throws Exception
+  public void aStrike() throws Exception
   {
-    strike();
     bowling.roll(7);
     bowling.roll(1);
+    strike();
+    bowling.roll(2);
+    bowling.roll(3);
     rollMany(0,16);
-    assertThat(bowling.score(),is(10+ 7+1+ 7+1));
+    assertThat(bowling.score(),is( 7+1+ 10+2+3+2+3));
 
   }
 
