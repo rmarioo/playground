@@ -12,7 +12,7 @@ public class Rolls
     hitPins.add(pins);
   }
 
-  public int sum()
+  public int countHitPins()
   {
     return hitPins.stream().mapToInt(i -> i).sum();
   }

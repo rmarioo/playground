@@ -11,7 +11,7 @@ public class Bowling
 
   public int score()
   {
-    return rolls.sum();
+    return rolls.countHitPins();
   }
 
 }

@@ -13,7 +13,7 @@ public class RollsTest
   {
    Rolls rolls = new Rolls();
    rolls.add(5);
-   assertThat(rolls.sum(),is(5));
+   assertThat(rolls.countHitPins(),is(5));
   }
 
   @Test
@@ -22,6 +22,6 @@ public class RollsTest
    Rolls rolls = new Rolls();
    rolls.add(5);
    rolls.add(2);
-   assertThat(rolls.sum(),is(7));
+   assertThat(rolls.countHitPins(),is(7));
   }
 }
