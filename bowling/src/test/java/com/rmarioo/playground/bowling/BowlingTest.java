@@ -37,12 +37,17 @@ public class BowlingTest
   @Test
   public void aSpareAtTheBeginningOfGame() throws Exception
   {
-    bowling.roll(2);
-    bowling.roll(8);
+    spare();
     bowling.roll(3);
     rollMany(0, 17);
     assertThat(bowling.score(),is(2+8+ 3+3));
 
+  }
+
+  private void spare()
+  {
+    bowling.roll(2);
+    bowling.roll(8);
   }
 
   private void rollMany(int score, int howMany)
