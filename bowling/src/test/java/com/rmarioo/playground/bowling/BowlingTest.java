@@ -17,4 +17,15 @@ public class BowlingTest
 
     assertThat(bowling.score(),is(0));
   }
+
+  @Test
+  public void notZeroRoll() throws Exception
+  {
+    Bowling bowling = new Bowling();
+    bowling.roll(2);
+    for (int i = 0; i < 19; i++)
+      bowling.roll(0);
+
+    assertThat(bowling.score(),is(2));
+  }
 }
