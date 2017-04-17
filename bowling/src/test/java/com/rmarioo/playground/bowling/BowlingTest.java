@@ -1,5 +1,6 @@
 package com.rmarioo.playground.bowling;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -32,6 +33,18 @@ public class BowlingTest
     bowling.roll(3);
     rollMany(0, 18);
     assertThat(bowling.score(),is(5));
+  }
+
+  @Ignore
+  @Test
+  public void aSpareAtTheBeginningOfGame() throws Exception
+  {
+    bowling.roll(2);
+    bowling.roll(8);
+    bowling.roll(3);
+    rollMany(0, 17);
+    assertThat(bowling.score(),is(2+8+ 3+3));
+
   }
 
   private void rollMany(int score, int howMany)

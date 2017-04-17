@@ -1,8 +1,11 @@
 package com.rmarioo.playground.bowling;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bowling
 {
-  private Rolls rolls = new Rolls();
+  private List<Integer> rolls = new ArrayList();
 
   public void roll(int pins)
   {
@@ -11,7 +14,7 @@ public class Bowling
 
   public int score()
   {
-    return rolls.countHitPins();
+    return rolls.stream().mapToInt(i->i).sum();
   }
 
 }
