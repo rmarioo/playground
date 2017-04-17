@@ -8,24 +8,28 @@ import static org.junit.Assert.assertThat;
 public class BowlingTest
 {
 
+  private final Bowling bowling = new Bowling();
+
   @Test
   public void allZeroRolls() throws Exception
   {
-    Bowling bowling = new Bowling();
-    for (int i = 0; i < 20; i++)
-      bowling.roll(0);
-
+    rollMany(0, 20);
     assertThat(bowling.score(),is(0));
   }
 
   @Test
   public void notZeroRoll() throws Exception
   {
-    Bowling bowling = new Bowling();
     bowling.roll(2);
-    for (int i = 0; i < 19; i++)
-      bowling.roll(0);
-
+    rollMany(0, 19);
     assertThat(bowling.score(),is(2));
+  }
+
+  private void rollMany(int score, int howMany)
+  {
+    for (int i = 0; i < howMany; i++)
+    {
+      bowling.roll(score);
+    }
   }
 }
