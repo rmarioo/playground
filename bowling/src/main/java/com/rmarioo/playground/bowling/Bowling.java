@@ -2,16 +2,16 @@ package com.rmarioo.playground.bowling;
 
 public class Bowling
 {
-  private int pins;
+  private Rolls rolls = new Rolls();
 
   public void roll(int pins)
   {
-    this.pins +=pins;
+    rolls.add(pins);
   }
 
   public int score()
   {
-    return pins;
+    return rolls.sum();
   }
 
 }
