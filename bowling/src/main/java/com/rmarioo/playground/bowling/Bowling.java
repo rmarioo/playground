@@ -1,5 +1,11 @@
 package com.rmarioo.playground.bowling;
 
+import com.rmarioo.playground.bowling.rules.BowlingRule;
+import com.rmarioo.playground.bowling.rules.CompositeRule;
+import com.rmarioo.playground.bowling.rules.PinsRule;
+import com.rmarioo.playground.bowling.rules.SpareRule;
+import com.rmarioo.playground.bowling.rules.StrikeRule;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;

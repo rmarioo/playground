@@ -1,8 +1,8 @@
-package com.rmarioo.playground.bowling;
+package com.rmarioo.playground.bowling.rules;
 
 import java.util.List;
 
-class PinsRule implements BowlingRule
+public class PinsRule implements BowlingRule
 {
   private final List<Integer> rolls;
 

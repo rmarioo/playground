@@ -1,4 +1,4 @@
-package com.rmarioo.playground.bowling;
+package com.rmarioo.playground.bowling.rules;
 
 import java.util.List;
 

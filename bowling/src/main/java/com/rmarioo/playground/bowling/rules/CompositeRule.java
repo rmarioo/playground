@@ -1,8 +1,8 @@
-package com.rmarioo.playground.bowling;
+package com.rmarioo.playground.bowling.rules;
 
 import java.util.List;
 
-class CompositeRule implements BowlingRule
+public class CompositeRule implements BowlingRule
 {
   private List<BowlingRule> rules;
 
