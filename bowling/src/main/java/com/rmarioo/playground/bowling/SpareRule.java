@@ -9,13 +9,12 @@ public class SpareRule implements BowlingRule
 
   public SpareRule(List<Integer> rolls)
   {
-
     this.rolls = rolls;
   }
 
   public int score(int i)
   {
-    return spareScore(i);
+    return isSpare(i) ? spareBonus(i) : 0;
   }
 
   private int spareScore(int i)
